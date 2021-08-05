@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 
+
 const Video = ({ response }) => {
+
   let [upVote, setUpVote] = useState(0);
   let [downVote, setDownVote] = useState(0);
 
