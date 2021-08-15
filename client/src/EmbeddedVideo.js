@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Title from "./Title";
-import UpVote from "./UpVote";
-import DownVote from "./DownVote";
+import Vote from "./Vote";
+import DeleteButton from "./DeleteButton";
 
 const EmbeddedVideo = ({ response }) => {
   let [vote, setVote] = useState(0);
@@ -14,10 +14,8 @@ const EmbeddedVideo = ({ response }) => {
             <div className="col-6 col-md-4">
               <Title title={data.title} />
               <div className="video-block">
-                <div className="votes">
-                  <UpVote vote={vote} setVote={setVote} />
-                  <span>{vote}</span>
-                  <DownVote vote={vote} setVote={setVote} />
+                <div className="col-sm " className="votes">
+                  <Vote vote={vote} setVote={setVote} />
                 </div>
                 <iframe
                   className="youtube-player"
@@ -29,10 +27,7 @@ const EmbeddedVideo = ({ response }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 />
-                <div className="row">
-                  <span>Rating: {data.rating}</span>
-                  <button className="btn btn-warning">Delete</button>
-                </div>
+                <DeleteButton rating={data.rating} />
               </div>
             </div>
           );
