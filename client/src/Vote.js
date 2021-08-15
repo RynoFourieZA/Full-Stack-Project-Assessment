@@ -10,18 +10,25 @@ const Vote = ({ vote, setVote }) => {
   }
 
   return (
-    <div className="down-vote">
+    <div className="row d-flex justify-content-between">
+      <div className="col">
       <i
         className="fa fa-thumbs-up"
-        style={{ fontSize: 36 }}
+        style={{ fontSize: 36, color: "red"}}
         onClick={upVote}
       ></i>
-      <span>{vote}</span>
+
+      </div>
+      <div className="col">
+      <span className="bold" >{vote} votes</span>
+      </div>
+      <div className="col">
       <i
         className="fa fa-thumbs-down"
-        style={{ fontSize: 36 }}
+        style={{ fontSize: 36, color: "red"}}
         onClick={downVote}
       ></i>
+      </div>
     </div>
   );
 };

@@ -12,11 +12,11 @@ const EmbeddedVideo = ({ response }) => {
         {response.map((data) => {
           return (
             <div className="col-6 col-md-4">
+              <div className="col">
               <Title title={data.title} />
+              </div>
               <div className="video-block">
-                <div className="col-sm " className="votes">
                   <Vote vote={vote} setVote={setVote} />
-                </div>
                 <iframe
                   className="youtube-player"
                   width="962"
